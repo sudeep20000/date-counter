@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./App.css";
 
 export default function App() {
   return (
@@ -30,13 +29,13 @@ function Counter() {
       </div>
 
       <div>
-        <button onClick={() => setCount((c) => c - step)}>-</button>
+        <button onClick={() => setCount((c) => c - step)}>◀</button>
         <input
           type="text"
           value={count}
           onChange={(e) => setCount(Number(e.target.value))}
         />
-        <button onClick={() => setCount((c) => c + step)}>+</button>
+        <button onClick={() => setCount((c) => c + step)}>▶</button>
       </div>
 
       <p>
@@ -49,9 +48,7 @@ function Counter() {
         </span>
         <span>{date.toDateString()}</span>
       </p>
-      {step === 1 && count === 0 ? (
-        ""
-      ) : (
+      {step === 1 && count === 0 ? null : (
         <button
           onClick={() => {
             setCount(0);
